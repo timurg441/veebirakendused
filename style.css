@@ -2,8 +2,8 @@
 h1{
     font-variant: small-caps;
     font-size: xx-large;
-    color: lightcoral; /*teksti värv*/
-    background: transparent; /*tausta värv*/
+    color: lightcoral;
+    background: transparent;
 }
 header{
     padding: 5%;
@@ -11,24 +11,25 @@ header{
     border-left: 3px solid lightcoral;
     border-bottom: 3px dotted lightcoral;
     border-radius: 0 0 0 60px;
-    background-image: url('paike.png');
+    background-image: url('inimene1.png');
     background-repeat: no-repeat;
     background-position: center center;
-
 }
 footer{
     width:100%;
-    padding: 5%;
-    background-color: floralwhite; /*tausta värv*/
+    padding: 2%;
+    background-color: floralwhite;
     font-variant: small-caps;
     border-top: 2px dotted orange;
     position:fixed;
     left:0;
     bottom:0;
+    text-align: center;
 }
-section#kast1, img{
-    border: 2px dashed #4a90e2; /*solid, double, dashed, dotted*/
-    width: 25%;
+
+section#kast1{
+    border: 2px dashed #4a90e2;
+    width: 45%;
     margin: 5px;
     padding: 1%;
     border-radius: 60px 120px 60px 120px;
@@ -36,17 +37,17 @@ section#kast1, img{
 }
 
 section#kast2{
-    border: 3px double #e67e22; /*solid, double, dashed, dotted*/
-    width: 25%;
+    border: 3px double #e67e22;
+    width: 45%;
     margin: 5px;
     padding: 1%;
     border-radius: 120px 60px 120px 60px;
     text-align: center;
 }
-section, img{
-    width: 100%;
-    border-radius: 50%;
-    border: 5px solid lightcoral;
+
+section#kast2 img{
+    width: 80%;
+    border-radius: 20px;
 }
 
 /*****************NAV**************/
@@ -68,7 +69,7 @@ nav ul li a{
     display: block;
     color: red;
     text-decoration: none; /* alljoone on kustutatud*/
-    padding: 5%;
+    padding: 10px 15px;
     text-align: center;
     border-left: 2px solid red;
     border-right: 2px solid red;
@@ -86,5 +87,33 @@ nav{
 }
 main{
     margin-top: 20px;
+    margin-bottom: 80px;
 }
 
+/*****************MEEDIA LEHT (GRID)**************/
+#suurkast {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+#suurkast section {
+    border: 2px solid lightcoral;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.galerii-sisu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.galerii-sisu img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
