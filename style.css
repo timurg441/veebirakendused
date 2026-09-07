@@ -1,0 +1,90 @@
+/*kommentaar*/
+h1{
+    font-variant: small-caps;
+    font-size: xx-large;
+    color: lightcoral; /*teksti värv*/
+    background: transparent; /*tausta värv*/
+}
+header{
+    padding: 5%;
+    background-color: dimgrey;
+    border-left: 3px solid lightcoral;
+    border-bottom: 3px dotted lightcoral;
+    border-radius: 0 0 0 60px;
+    background-image: url('paike.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+footer{
+    width:100%;
+    padding: 5%;
+    background-color: floralwhite; /*tausta värv*/
+    font-variant: small-caps;
+    border-top: 2px dotted orange;
+    position:fixed;
+    left:0;
+    bottom:0;
+}
+section#kast1, img{
+    border: 2px dashed #4a90e2; /*solid, double, dashed, dotted*/
+    width: 25%;
+    margin: 5px;
+    padding: 1%;
+    border-radius: 60px 120px 60px 120px;
+    text-align: center;
+}
+
+section#kast2{
+    border: 3px double #e67e22; /*solid, double, dashed, dotted*/
+    width: 25%;
+    margin: 5px;
+    padding: 1%;
+    border-radius: 120px 60px 120px 60px;
+    text-align: center;
+}
+section, img{
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid lightcoral;
+}
+
+/*****************NAV**************/
+nav ul{
+    list-style-type: none; /*täpp võtab ära*/
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+nav ul li{
+    float: left;
+}
+nav ul li a{
+    display: block;
+    color: red;
+    text-decoration: none; /* alljoone on kustutatud*/
+    padding: 5%;
+    text-align: center;
+    border-left: 2px solid red;
+    border-right: 2px solid red;
+    border-radius: 20%;
+    font-variant: small-caps;
+}
+
+nav ul li a:hover{ /*link fookuses - hiir on peal*/
+    background-color: orange;
+}
+
+nav{
+    padding: 10px;
+    margin: 10px;
+}
+main{
+    margin-top: 20px;
+}
+
