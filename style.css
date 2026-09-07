@@ -104,16 +104,3 @@ main{
     padding: 15px;
     background-color: #f9f9f9;
 }
-
-.galerii-sisu {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.galerii-sisu img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
