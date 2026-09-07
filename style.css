@@ -1,106 +1,321 @@
-/*kommentaar*/
-h1{
-    font-variant: small-caps;
-    font-size: xx-large;
-    color: lightcoral;
-    background: transparent;
-}
-header{
-    padding: 5%;
-    background-color: dimgrey;
-    border-left: 3px solid lightcoral;
-    border-bottom: 3px dotted lightcoral;
-    border-radius: 0 0 0 60px;
-    background-image: url('inimene1.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-footer{
-    width:100%;
-    padding: 2%;
-    background-color: floralwhite;
-    font-variant: small-caps;
-    border-top: 2px dotted orange;
-    position:fixed;
-    left:0;
-    bottom:0;
-    text-align: center;
+/***************** ФУТУРИСТИЧНЫЙ НЕОНОВЫЙ СТИЛЬ **************/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+/* Переменные неоновых цветов */
+:root {
+    --neon-cyan: #00f3ff;
+    --neon-pink: #ff007f;
+    --neon-purple: #9d00ff;
+    --bg-dark: #05050a;
+    --glass-bg: rgba(12, 16, 28, 0.75);
+    --border-glow: rgba(0, 243, 255, 0.3);
 }
 
-section#kast1{
-    border: 2px dashed #4a90e2;
-    width: 45%;
-    margin: 5px;
-    padding: 1%;
-    border-radius: 60px 120px 60px 120px;
-    text-align: center;
+* {
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-section#kast2{
-    border: 3px double #e67e22;
-    width: 45%;
-    margin: 5px;
-    padding: 1%;
-    border-radius: 120px 60px 120px 60px;
-    text-align: center;
+/* Кастомный неоновый курсор */
+html, body {
+    cursor: crosshair;
 }
 
-section#kast2 img{
-    width: 80%;
-    border-radius: 20px;
-}
-
-/*****************NAV**************/
-nav ul{
-    list-style-type: none; /*täpp võtab ära*/
+body {
     margin: 0;
     padding: 0;
-    background-color: lightgray;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    background-color: var(--bg-dark);
+    /* Анимированная сетка на фоне */
+    background-image:
+            linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+            radial-gradient(circle at 15% 20%, rgba(157, 0, 255, 0.15), transparent 40%),
+            radial-gradient(circle at 85% 80%, rgba(255, 0, 127, 0.15), transparent 40%);
+    background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+    background-attachment: fixed;
+    color: #e0e6ed;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
-nav ul li{
-    float: left;
+
+/* Неоновый скроллбар */
+::-webkit-scrollbar {
+    width: 6px;
 }
-nav ul li a{
+::-webkit-scrollbar-track {
+    background: #020205;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--neon-purple);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+/***************** БОКОВОЕ МЕНЮ СЛЕВА (LEFT SIDEBAR) **************/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100vh;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border-right: 2px solid var(--neon-pink);
+    box-shadow: 5px 0 25px rgba(255, 0, 127, 0.3);
+    padding: 40px 20px;
+    z-index: 1000;
+}
+
+nav::after {
+    content: 'SYSTEM ACTIVE';
     display: block;
-    color: red;
-    text-decoration: none; /* alljoone on kustutatud*/
-    padding: 10px 15px;
-    text-align: center;
-    border-left: 2px solid red;
-    border-right: 2px solid red;
-    border-radius: 20%;
-    font-variant: small-caps;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    color: var(--neon-cyan);
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px var(--neon-cyan);
+    animation: pulse 2s infinite;
 }
 
-nav ul li a:hover{ /*link fookuses - hiir on peal*/
-    background-color: orange;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-nav{
+nav ul li {
+    width: 100%;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 18px;
+    background: rgba(10, 15, 30, 0.6);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-left: 4px solid var(--neon-cyan);
+    clip-path: polygon(0 0, 92% 0, 100% 25%, 100% 100%, 0 100%);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    background: linear-gradient(90deg, rgba(255, 0, 127, 0.4) 0%, rgba(157, 0, 255, 0.2) 100%);
+    border-color: var(--neon-pink);
+    border-left: 4px solid var(--neon-pink);
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.6), inset 0 0 10px rgba(255, 0, 127, 0.4);
+    transform: translateX(8px);
+    text-shadow: 0 0 8px #ffffff;
+}
+
+/***************** ОСНОВНОЙ КОНТЕНТ СМЕЩЕН ВПРАВО **************/
+header, main, footer {
+    margin-left: 270px;
+}
+
+/* Шапка сайта */
+header {
+    padding: 40px;
+    background: linear-gradient(180deg, rgba(157, 0, 255, 0.15) 0%, rgba(5, 5, 10, 0) 100%);
+    border-bottom: 1px solid var(--border-glow);
+    position: relative;
+}
+
+/* Неоновый градиентный бегунок сверху */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink), var(--neon-purple));
+    box-shadow: 0 0 12px var(--neon-cyan);
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    background: linear-gradient(90deg, #ffffff 0%, var(--neon-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.5));
+}
+
+/* Главная область */
+main {
+    padding: 30px 40px 120px 40px;
+    max-width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+main section {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 4px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Киберпанк уголок для секций */
+main section::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 15px;
+    height: 15px;
+    background: var(--neon-pink);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    box-shadow: 0 0 8px var(--neon-pink);
+}
+
+main section:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.3), inset 0 0 15px rgba(0, 243, 255, 0.1);
+    transform: translateY(-4px);
+}
+
+main h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+    padding-bottom: 10px;
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+main a {
+    color: var(--neon-pink);
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);
+}
+
+main a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+}
+
+/* Секции Главной страницы (index.html) */
+section#kast1, section#kast2 {
+    flex: 1 1 calc(50% - 15px);
+    min-width: 300px;
+}
+
+section#kast2 img {
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin: 20px auto 0 auto;
+    border: 2px solid var(--neon-purple);
+    border-radius: 8px;
+    background: #000;
     padding: 10px;
-    margin: 10px;
-}
-main{
-    margin-top: 20px;
-    margin-bottom: 80px;
+    box-shadow: 0 0 20px rgba(157, 0, 255, 0.4);
+    filter: contrast(1.1);
 }
 
-/*****************MEEDIA LEHT (GRID)**************/
+/* Одиночные карточки */
+section#kast3, section#kast4, section#kast5 {
+    width: 100%;
+}
+
+/***************** МЕДИА СТРАНИЦА (GRID & CARDS) **************/
 #suurkast {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 10px;
+    gap: 30px;
+    width: 100%;
 }
 
 #suurkast section {
-    border: 2px solid lightcoral;
-    border-radius: 15px;
-    padding: 15px;
-    background-color: #f9f9f9;
+    width: 100%;
+}
+
+.galerii-sisu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.galerii-sisu img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 0, 127, 0.4);
+    border-radius: 4px;
+    filter: brightness(0.8) saturate(1.2);
+}
+
+.galerii-sisu img:hover {
+    filter: brightness(1.2) saturate(1.5);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan);
+    transform: scale(1.08);
+    z-index: 10;
+}
+
+/* Ифреймы Видео / Карты / Музыки */
+iframe {
+    border-radius: 6px;
+    border: 1px solid var(--border-glow) !important;
+    margin-top: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Подвал (Footer) */
+footer {
+    padding: 20px 40px;
+    background: #020205;
+    border-top: 1px solid var(--neon-purple);
+    color: #64748b;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-align: center;
+    box-shadow: 0 -5px 20px rgba(157, 0, 255, 0.2);
+}
+
+footer a {
+    color: var(--neon-cyan);
+}
+
+/* Анимация пульсации */
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
 }
