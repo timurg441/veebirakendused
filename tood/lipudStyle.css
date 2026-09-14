@@ -1,0 +1,24 @@
+#lipud{
+    position:absolute;
+    top:0;
+    left:40%;
+}
+#eesti{
+    width:330px;
+    height:210px;
+    border: 1px solid lightgray;
+    border-spacing: 0;
+    position: absolute;
+    top: 50px;
+    left: 40%;
+}
+/*pseudoelementide kasutamine*/
+#eesti tr:nth-child(1){ /*1. rida*/
+    background-color: blue;
+}
+#eesti tr:nth-child(2){ /*2. rida*/
+    background-color: black;
+}
+#eesti tr:nth-child(3){ /*3. rida*/
+    background-color: white;
+}
