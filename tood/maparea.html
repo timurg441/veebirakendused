@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map area</title>
+</head>
+<body>
+<h1>Map area kasutamine</h1>
+<h2>Tuleb klikida monitor, prügikast, kohvitass, telefon, mälupulk</h2>
+<img src="arvutipilt.jpg" alt="arvuti pilt" usemap="#arvuti">
+<map name="arvuti">
+    <area shape="circle" coords="438, 49, 50"
+          href="https://www.aki.ee/isikuandmed/kkk/kaamerad" alt="kaamera" target="_blank">
+    <!-- circle coords=(x,y, R) -->
+<area shape="rect" coords="243, 113, 355, 187" href="monitor.html" alt="monitor">
+    <!-- rect coords "x,y ,x1, y2" -->
+    <!-- kolmnurk - poly - tuleb võta kõik koordinadid vasakult parema suuna-->
+    <area shape="poly" coords="60, 276, 168, 254, 124, 329" href="prygi.html" alt="prügikast">
+    <!-- Ülesanne. Lisa kokku 5-6 pildiala, mis linkivad teisele failile sama sisuga css kujundus lisa ise-->
+    <area shape="circle" coords="193,257,25" href="tass.html" alt="kohvitass">
+    <area shape="circle" coords="165, 172, 10" href="telefon.html" alt="telefon">
+    <area shape="rect" coords="477,1612,510,165" href="malupulk.html" alt="mälupulk">
+
+</map>
+<div>palun tee klick hiirega pildi peal!</div>
+
+</body>
+</html>
