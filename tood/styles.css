@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 20px;
+    color: #243447;
+    background-color: #f1f5f8;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.kaart {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 2px solid #d8a15d;
+    border-radius: 15px;
+    background-color: white;
+    text-align: center;
+}
+
+h1 {
+    color: #b45309;
+}
+
+.kaart > img {
+    display: block;
+    width: 100%;
+    max-width: 528px;
+    height: auto;
+    margin: 20px auto;
+    outline: 4px solid #34495e;
+    border-radius: 10px;
+}
+
+.selgitused,
+.selgitus {
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 650px;
+    border-radius: 10px;
+    background-color: #fff7ed;
+}
+
+.selgitus {
+    display: none;
+    border: 3px solid #e67e22;
+}
+
+.selgitus:target {
+    display: block;
+}
+
+.selgitus h2 {
+    margin-top: 0;
+    color: #9a3412;
+}
+
+.kodu-link {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    background-color: #34495e;
+    text-decoration: none;
+}
+
+.kodu-link:hover {
+    background-color: #e67e22;
+}
