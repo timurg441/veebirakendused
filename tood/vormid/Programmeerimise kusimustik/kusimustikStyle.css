@@ -1,0 +1,54 @@
+form{
+    text-align:left;
+    border-radius: 30px;
+}
+table, td{
+    border-collapse:collapse;
+    width:40%;
+    padding:2%;
+    border-radius: 30px;
+
+}
+input[type=text],input[type=date], input[type=number]{
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding:1%;
+}
+label{
+    font-weight: bold;
+
+}
+input[type=radio]+label{
+    background-color: #fff9ee;
+    font-size: 10pt;
+    padding: 5px;
+    width: 60px;
+    height: 20px;
+    border: 1px solid #e0d9cc;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 40px;
+}
+input[type=radio]+label:hover{
+    background-color: #e64833;
+    color: white;
+    font-weight: bold;
+
+}
+input[type=checkbox]+label{
+    background-color: #fff9ee;
+    font-size: 10pt;
+    padding: 5px;
+    width: 60px;
+    height: 20px;
+    border: 1px solid #e0d9cc;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 40px;
+}
+
+input[type=checkbox]+label:hover{
+    background-color: #e64833;
+    color: white;
+    font-weight: bold;
+}
