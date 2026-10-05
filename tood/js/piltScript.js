@@ -30,7 +30,7 @@ function selectValik(){
 }
 //radio valikud
 function radioValik() {
-    let piltValik = document.getElementsByName("piltValik");//mitu elemendi ühe nimega.
+    let piltValik = document.getElementsByName("piltValik");//mitu elemendi ühe nimega
     let valitudPilt = document.getElementById("valitudPilt");
 
     for (let i = 0; i < piltValik.length; i++) {
