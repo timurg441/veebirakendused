@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <title>Muusika küsimustik</title>
+  <link rel="stylesheet" href="vormStyle.css">
+  <script src="../js/kysimustikScript.js"></script>
+</head>
+<body>
+<h1>Muusika küsimustik</h1>
+<div>HTML vormid ja nupud</div>
+<form action="#">
+  <!-- c + tab komentaar -->
+  <table border="1">
+    <tr>
+      <td>
+        <!-- Tekstkast -->
+        <label for="nimi">Nimi:</label>
+      </td>
+      <td>
+        <input type="text" id="nimi" placeholder="Timur" oninput="nimiLugemineKastist()">
+      </td>
+      <td>
+        <div id="vastus1"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <!-- ripploend või rippmenüü -->
+        <label for="stiil">Vali meeldivaim muusikastiil:</label>
+      </td>
+      <td>
+        <select name="stiil" id="stiil" onchange="selectValik()">
+          <option value="vali">vali..</option>
+          <option value="hiphop">hiphop</option>
+          <option value="kantri">kantri</option>
+          <option value="rock">rock</option>
+          <option value="metal">metal</option>
+          <option value="jazz">jazz</option>
+        </select>
+      </td>
+      <td>
+        <div id="vastus5"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <!-- radio nupud -üks valik mitmest -->
+        <strong>
+          Kuidas sa muusikat peamiselt kuulad?
+        </strong>
+      </td>
+      <td>
+        <input type="radio" name="platvorm" id="spotify" value="spotify" onclick="radioValik()">
+        <label for="spotify">Spotify</label>
+        <br>
+        <input type="radio" name="platvorm" id="raadio" value="raadio" onclick="radioValik()">
+        <label for="raadio">raadio</label>
+        <br>
+        <input type="radio" name="platvorm" id="vinüülplaat" value="vinüülplaat" onclick="radioValik()">
+        <label for="vinüülplaat">vinüülplaat</label>
+      </td>
+      <td>
+        <div id="vastus2"></div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <!-- checkbox - markerruut -->
+        <fieldset>
+          <legend>Tee oma valikud - lemmik ansambel</legend>
+          <input type="checkbox" name="lemmikud" id="rollingstones" value="Rolling Stones" onchange="checkboxValik()">
+          <label for="rollingstones">Rolling stones</label>
+          <br>
+          <input type="checkbox" name="lemmikud" id="systemofdown" value="System of Down" onchange="checkboxValik()">
+          <label for="systemofdown">System of Down</label>
+          <br>
+          <input type="checkbox" name="lemmikud" id="metallica" value="Metallica" onchange="checkboxValik()">
+          <label for="metallica">Metallica</label>
+          <br>
+        </fieldset>
+      </td>
+      <td>
+        <div id="vastus3"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <!-- range - vahemik -->
+        <label for="tund">
+          Mitu tundi päevas sa kuulad muusikat?
+        </label>
+      </td>
+      <td>
+        0<input type="range" id="tund" min="0" max="24" onchange="rangeValik()">24
+      </td>
+      <td>
+        <div id="vastus4"></div>
+      </td>
+    </tr>
+    <tr>
+      <td> Input type=color, file, email, jne kokku 5-6tk</td>
+      <td>w3schools.com</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="reset" value="Puhasta" onclick="puhasta()">
+      </td>
+      <td>
+        <input type="button" value="Näita/Loe andmed" onclick="naitaKoike()">
+      </td>
+      <td>
+        <div id="vastusKoik"></div>
+      </td>
+    </tr>
+
+  </table>
+
+
+
+
+</form>
+</body>
+</html>
