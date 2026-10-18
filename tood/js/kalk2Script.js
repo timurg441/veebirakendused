@@ -4,7 +4,7 @@ function jookideValik(){
     let kogus=document.getElementById('kogus');
     const kohv=1.50;
     const cola=2.20;
-    const fanta=2.00
+    const fanta=2.00;
 
     if(joogiValik.selectedIndex === 1){
         vastus2.innerHTML=kogus.value+'Kohvi hind on '

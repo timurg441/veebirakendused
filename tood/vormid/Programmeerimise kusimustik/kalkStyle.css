@@ -17,3 +17,12 @@ section#kalk2{
 img#vastusepilt{
     width: 100px;
 }
+section#kalk3{
+    border: 2pt solid brown;
+    border-radius: 10px;
+    width: 30%;
+    padding: 10px;
+}
+img#vastusepilt3{
+    width: 100px;
+}
