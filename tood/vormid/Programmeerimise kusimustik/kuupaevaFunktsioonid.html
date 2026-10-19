@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Kuupäeva funktsioonid</title>
+    <link rel="stylesheet" href="kuupaevStyle.css">
     <script src="../../js/kuupaev.js"></script>
 </head>
 <body>
+
 <h1>Kuupäeva funktsioonid</h1>
-<input type="button" value="Täna on" onclick="tana()">
-<input type="button" value="Kellaaeg" onclick="kell()">
+
+<div class="button-container">
+    <input type="button" value="Täna on" onclick="tana()">
+    <input type="button" value="Kellaaeg" onclick="kell()">
+    <input type="button" value="Päeva Konsultatsiooni nädalani" onclick="paevaKonsultatsioon()">
+    <input type="button" value="Päeva minu sünnipäevani" onclick="paevaSynnipaevani()">
+</div>
+
 <div id="vastus"></div>
+
 </body>
 </html>
