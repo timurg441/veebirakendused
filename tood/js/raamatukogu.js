@@ -1,76 +1,56 @@
 let tulemus1 = "";
 
-let raamat = {
-    pealkiri: "Kevade",
-    autor: "Oskar Luts",
-    aasta: 1912,
+let pealkiri = "Kevade";
+let autor = "Oskar Luts";
+let aasta = 1912;
 
-    kirjeldus() {
-        return `${this.pealkiri}, ${this.autor}, ${this.aasta}`;
-    },
+console.log(pealkiri + ", " + autor + ", " + aasta);
+tulemus1 += "<p>" + pealkiri + ", " + autor + ", " + aasta + "</p>";
 
-    muudaAastat(uusAasta) {
-        this.aasta = uusAasta;
-    }
-};
+aasta = 1913;
 
-console.log(raamat.kirjeldus());
-tulemus1 += `<p>${raamat.kirjeldus()}</p>`;
-
-raamat.muudaAastat(1913);
-
-console.log(raamat.kirjeldus());
-tulemus1 += `<p>${raamat.kirjeldus()}</p>`;
+console.log(pealkiri + ", " + autor + ", " + aasta);
+tulemus1 += "<p>" + pealkiri + ", " + autor + ", " + aasta + "</p>";
 
 document.getElementById("vastus1").innerHTML = tulemus1;
 
-
 let tulemus2 = "";
 
-let raamatukogu = {
-    raamatud: [
-        { pealkiri: "Kevade", autor: "Oskar Luts", aasta: 1912 },
-        { pealkiri: "Tõde ja õigus", autor: "A. H. Tammsaare", aasta: 1926 },
-        { pealkiri: "Rehepapp", autor: "Andrus Kivirähk", aasta: 2000 },
-        { pealkiri: "Ivan Orava", autor: "Andrus Kivirähk", aasta: 2007 }
-    ],
+let raamatud = ["Kevade", "Tõde ja õigus", "Rehepapp", "Ivan Orava"];
+let autorid = ["Oskar Luts", "A. H. Tammsaare", "Andrus Kivirähk", "Andrus Kivirähk"];
+let aastad = [1912, 1926, 2000, 2007];
 
-    kuvaKoik() {
-        this.raamatud.forEach((r) => {
-            console.log(`Pealkiri: ${r.pealkiri}, Autor: ${r.autor}, Aasta: ${r.aasta}`);
-            tulemus2 += `<p><b>Pealkiri:</b> ${r.pealkiri}<br><b>Autor:</b> ${r.autor}<br><b>Aasta:</b> ${r.aasta}</p><hr>`;
-        });
-    },
+for (let i = 0; i < raamatud.length; i++) {
+    console.log("Pealkiri: " + raamatud[i] + ", Autor: " + autorid[i] + ", Aasta: " + aastad[i]);
+    tulemus2 += "<p><b>Pealkiri:</b> " + raamatud[i] + "<br>" +
+        "<b>Autor:</b> " + autorid[i] + "<br>" +
+        "<b>Aasta:</b> " + aastad[i] + "</p><hr>";
+}
 
-    lisaRaamat(uus) {
-        this.raamatud.push(uus);
-    },
+raamatud.push("Harry Potter");
+autorid.push("J. K. Rowling");
+aastad.push(2001);
 
-    koguarv() {
-        return this.raamatud.length;
-    },
+let kokku = raamatud.length;
+console.log("Raamatuid kokku: " + kokku);
+tulemus2 += "<p><b>Raamatuid kokku:</b> " + kokku + "</p>";
 
-    parast2000() {
-        return this.raamatud.filter(r => r.aasta > 2000).length;
-    },
-
-    leiaAutor(autorNimi) {
-        return this.raamatud.filter(r => r.autor === autorNimi);
+let uuedRaamatud = 0;
+for (let i = 0; i < aastad.length; i++) {
+    if (aastad[i] > 2000) {
+        uuedRaamatud++;
     }
-};
+}
+console.log("Pärast 2000. aastat: " + uuedRaamatud);
+tulemus2 += "<p><b>Pärast 2000. aastat:</b> " + uuedRaamatud + "</p>";
 
-raamatukogu.kuvaKoik();
-
-raamatukogu.lisaRaamat({ pealkiri: "Harry Potter", autor: "J. K. Rowling", aasta: 2001 });
-
-console.log("Raamatuid kokku: " + raamatukogu.koguarv());
-tulemus2 += `<p><b>Raamatuid kokku:</b> ${raamatukogu.koguarv()}</p>`;
-
-console.log("Pärast 2000. aastat: " + raamatukogu.parast2000());
-tulemus2 += `<p><b>Pärast 2000. aastat:</b> ${raamatukogu.parast2000()}</p>`;
-
-let kivirahk = raamatukogu.leiaAutor("Andrus Kivirähk");
-console.log(kivirahk);
-tulemus2 += `<p><b>Andrus Kivirähki raamatuid:</b> ${kivirahk.length}</p>`;
+let kivirahkArv = 0;
+for (let i = 0; i < autorid.length; i++) {
+    if (autorid[i] === "Andrus Kivirähk") {
+        kivirahkArv++;
+    }
+}
+console.log("Andrus Kivirähki raamatuid: " + kivirahkArv);
+tulemus2 += "<p><b>Andrus Kivirähki raamatuid:</b> " + kivirahkArv + "</p>";
 
 document.getElementById("vastus2").innerHTML = tulemus2;
