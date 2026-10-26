@@ -1,35 +1,35 @@
-// Tyhi muutuja tulemuse salvestamiseks
+// siia paneme alguses tyhja teksti html-i jaoks
 let tulemus1 = "";
 
-// Objekt raamatu andmetega ja meetodiga
+// raamatu objekt omaduste ja meetodiga
 let raamat = {
     pealkiri: "Kevade",
     autor: "Oskar Luts",
     aasta: 1912,
 
-    // Meetod, mis tagastab raamatu info (kasutab this võtmesõna)
+    // meetod mis võtab selle sama objekti andmed (this)
     info() {
         return this.pealkiri + ", " + this.autor + ", " + this.aasta;
     }
 };
 
-// Väljastame raamatu info konsooli ja lisame tulemusse
+// trükime konsooli ja lisame muutujasse
 console.log(raamat.info());
 tulemus1 += "<p>" + raamat.info() + "</p>";
 
-// Muudame raamatu aastat
+// muudame aastat otse
 raamat.aasta = 1913;
 console.log(raamat.info());
 tulemus1 += "<p>" + raamat.info() + "</p>";
 
-// Kuvame tulemuse veebilehel
+// saadame esimese osa lehele
 document.getElementById("vastus1").innerHTML = tulemus1;
 
 
-// Teine osa: objektide massiiv ja meetodid
+// teine osa: objektide massiiv
 let tulemus2 = "";
 
-// Objektide massiiv raamatutega
+// raamatute nimekiri objektidena
 let raamatud = [
     { pealkiri: "Kevade", autor: "Oskar Luts", aasta: 1912 },
     { pealkiri: "Tõde ja õigus", autor: "A. H. Tammsaare", aasta: 1926 },
@@ -37,7 +37,7 @@ let raamatud = [
     { pealkiri: "Ivan Orava", autor: "Andrus Kivirähk", aasta: 2007 }
 ];
 
-// Läbime massiivi forEach tsükliga ja kuvame raamatud
+// käime kõik raamatud forEach-iga läbi
 raamatud.forEach(raamat => {
     console.log("Pealkiri: " + raamat.pealkiri + ", Autor: " + raamat.autor + ", Aasta: " + raamat.aasta);
     tulemus2 += "<p><b>Pealkiri:</b> " + raamat.pealkiri + "<br>" +
@@ -45,23 +45,23 @@ raamatud.forEach(raamat => {
         "<b>Aasta:</b> " + raamat.aasta + "</p><hr>";
 });
 
-// Lisame uue raamatu massiivi lõppu meetodiga push()
+// lisame ühe uue raamatu lõppu push-iga
 raamatud.push({ pealkiri: "Harry Potter", autor: "J. K. Rowling", aasta: 2001 });
 
-// Loeme raamatute koguarvu (length)
+// vaatame mitu raamatut kokku on (length)
 let kokku = raamatud.length;
 console.log("Raamatuid kokku: " + kokku);
 tulemus2 += "<p><b>Raamatuid kokku:</b> " + kokku + "</p>";
 
-// Filtreerime raamatud, mis on uuemad kui aasta 2000 (filter())
+// filtreerime need mis on uuemad kui 2000
 let uuedRaamatud = raamatud.filter(raamat => raamat.aasta > 2000);
 console.log("Pärast 2000. aastat raamatuid: " + uuedRaamatud.length);
 tulemus2 += "<p><b>Pärast 2000. aastat raamatuid:</b> " + uuedRaamatud.length + "</p>";
 
-// Filtreerime raamatud konkreetse autori järgi (filter())
+// otsime ainult kivirähki raamatud
 let kivirahkRaamatud = raamatud.filter(raamat => raamat.autor === "Andrus Kivirähk");
 console.log("Andrus Kivirähki raamatuid: " + kivirahkRaamatud.length);
 tulemus2 += "<p><b>Andrus Kivirähki raamatuid:</b> " + kivirahkRaamatud.length + "</p>";
 
-// Kuvame teise osa tulemuse veebilehel
+// saadame kőik teise osa andmed lehele
 document.getElementById("vastus2").innerHTML = tulemus2;
