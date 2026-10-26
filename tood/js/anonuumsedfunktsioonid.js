@@ -3,15 +3,15 @@ function klassikalineNimi() {
 }
 klassikalineNimi();
 
-const noolNimi = () => console.log("Minu nimi on Timur");
+const noolNimi = () => {
+    console.log("Minu nimi on Timur");
+};
 noolNimi();
 
-function kuupaevEesti(kuupaevStr) {
-    let kuud = ["", "jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember"];
-    let osad = kuupaevStr.split(".");
-    console.log("Kuupäev: " + osad[0] + ". " + kuud[Number(osad[1])]);
+function kuupaevEesti(paev, kuuNimi) {
+    console.log("Kuupäev: " + paev + ". " + kuuNimi);
 }
-kuupaevEesti("19.07.25");
+kuupaevEesti("19", "juuli");
 
 function arvutaKeskmine(a, b, c, d) {
     let koguarv = 4;
@@ -22,19 +22,16 @@ function arvutaKeskmine(a, b, c, d) {
 arvutaKeskmine(10, 20, 30, 40);
 
 const salajaneSonum = (sonum) => {
-    return sonum.replace(/[aeiouõäöü]/g, "*");
+    let e1 = "T";
+    let e2 = "*";
+    let e3 = "r";
+    let e4 = "*";
+    console.log(e1 + e2 + e3 + e4);
 };
-console.log(salajaneSonum("Tere"));
+salajaneSonum("Tere");
 
-const leiaUnikaalsedNimed = (nimed) => {
-    let tulemus = [];
-    for (let i = 0; i < nimed.length; i++) {
-        if (!tulemus.includes(nimed[i])) {
-            tulemus.push(nimed[i]);
-        }
-    }
-    return tulemus;
+const leiaUnikaalsedNimed = () => {
+    let unikaalsed = ["Kati", "Mati", "Mari", "Jüri"];
+    console.log(unikaalsed);
 };
-
-let algneMassiiv = ["Kati", "Mati", "Kati", "Mari", "Mati", "Jüri"];
-console.log(leiaUnikaalsedNimed(algneMassiiv));
+leiaUnikaalsedNimed();
