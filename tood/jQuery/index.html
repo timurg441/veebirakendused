@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery kasutamine</title>
-   <link rel="stylesheet" href="queryStyle.css">
+    <link rel="stylesheet" href="queryStyle.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"
             integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI="
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous">
+
+    </script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             $('#kuva').hide();
             //nupu peida vajutamine
-            $('#peida').click(function(){
+            $('#peida').click(function() {
                 $('#sisu').hide(500);
                 $(this).hide();
-                $('#kuva').show(500);
+                $('#kuva').show();
             });
             //nupu kuva vajutamine
             $('#kuva').click(function() {
@@ -29,8 +31,8 @@
         function start(){
             $('#sisu').draggable(); // lohistada hiirega veebilehel
             $('#pilt').draggable();
-            $('#pilt').bind("drag", xyKoordinat);
             $('#sisu').bind("drag", xyKoordinat);
+            $('#pilt').bind("drag", xyKoordinat);
         }
         function xyKoordinat(event, ui){
             let koht=ui.offset;
@@ -45,16 +47,17 @@
     <h1>jQuery kasutamine</h1>
 </header>
 <main>
-    <input type="button" value="--->" id="paremale"
-    onclick="$('#sisu').animate({left: '500px'}, 1000);
-    $(this).hide();
-    $('#vasakule').show();">
-    <input type="button" value="<---" id="vasakule" style="display:none"
-           onclick="$('#sisu').animate({left: '0px'}, 1000);
-           $(this).hide();
-           $('#paremale').show();">
+    <input type="button" value="===>" id="paremale"
+           onclick="$('#sisu, h2').animate({left: '500px'}, 1000);
+            $(this).hide();
+            $('#vasakule').show();">
+    <input type="button" value="<===" id="vasakule" style="display:none"
+           onclick="$('#sisu, h2').animate({left: '0px'}, 1000);
+          $(this).hide();
+          $('#paremale').show();">
     <input type="button" value="Peida" id="peida">
     <input type="button" value="Kuva" id="kuva">
+
     <section>
         <h2>JQuery File upload</h2>
         <div id="sisu">
@@ -62,7 +65,8 @@
         </div>
     </section>
     <section>
-        <img src="https://space-facts.com/wp-content/uploads/uranus-transparent.png" alt="" id="pilt">
+        <img src="https://space-facts.com/wp-content/uploads/jupiter-transparent-768x768.png" alt="" id="pilt">
+        <div id="vastus"></div>
     </section>
 </main>
 
