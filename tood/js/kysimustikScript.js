@@ -105,3 +105,51 @@ function puhasta(){
     vastus5.innerHTML="";
     vastusKoik.innerHTML="";
 }
+
+$(document).ready(function(){
+    $('.viga').hide();
+
+    $('input[type="reset"]').click(function(){
+        $('.viga').hide();
+    });
+
+    $('#muusikaVorm').submit(function(event){
+        let valid = true;
+
+        if($('#nimi').val().trim() === ""){
+            $('#vigaNimi').show();
+            valid = false;
+        } else {
+            $('#vigaNimi').hide();
+        }
+
+        if($('#stiil').val() === "vali"){
+            $('#vigaStiil').show();
+            valid = false;
+        } else {
+            $('#vigaStiil').hide();
+        }
+
+        if($('input[name="platvorm"]:checked').length === 0){
+            $('#vigaPlatvorm').show();
+            valid = false;
+        } else {
+            $('#vigaPlatvorm').hide();
+        }
+
+        if($('input[name="lemmikud"]:checked').length === 0){
+            $('#vigaLemmikud').show();
+            valid = false;
+        } else {
+            $('#vigaLemmikud').hide();
+        }
+
+        if(!valid){
+            event.preventDefault();
+        } else {
+            event.preventDefault();
+            naitaKoike();
+            alert("Vorm on edukalt valideeritud ja saadetud!");
+        }
+    });
+});

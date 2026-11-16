@@ -2,11 +2,59 @@
 <!--kommentaar-->
 <html lang="et">
 <head> <!--tehniline info-->
-    <meta charset="UTF-8">
-    <title>Timur veebirakenduste aluste tööd</title>
+  <meta charset="UTF-8">
+  <title>Timur veebirakenduste aluste tööd</title>
   <link rel="stylesheet" href="style.css">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"
+          integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI="
+          crossorigin="anonymous">
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $('#kuva').hide();
+
+      $('#peida').click(function() {
+        $('#kast1, #kast2').hide(500);
+        $(this).hide();
+        $('#kuva').show();
+      });
+
+      $('#kuva').click(function() {
+        $('#kast1, #kast2').show(500);
+        $(this).hide();
+        $('#peida').show();
+      });
+
+      $('#varv').click(function() {
+        $('#kast1').css('color', 'red');
+      });
+    });
+
+    function start(){
+      $('#kast1').draggable();
+      $('#kast2 img').attr('id', 'pilt').draggable();
+
+      $('#kast1').bind("drag", xyKoordinat1);
+      $('#pilt').bind("drag", xyKoordinat2);
+    }
+
+    function xyKoordinat1(event, ui){
+      let koht = ui.offset;
+      $('#vastus1').html('Kast 1 -> x: ' + koht.left + ' //// y: ' + koht.top);
+    }
+
+    function xyKoordinat2(event, ui){
+      let koht = ui.offset;
+      $('#vastus2').html('Pilt -> x: ' + koht.left + ' //// y: ' + koht.top);
+    }
+  </script>
 </head>
-<body>
+<body onload="start()">
 <!--veebilehe sisu, mis kasutaja näeb-->
 <!--päis-->
 <header>
@@ -30,11 +78,21 @@
       <a href="tood.html">Tehtud tööd</a>
     </li>
     <li>
-    <a href="meedia.html">Meedia</a>
+      <a href="meedia.html">Meedia</a>
+    </li>
   </ul>
 </nav>
 <!--sisu-->
 <main>
+  <input type="button" value="Peida" id="peida">
+  <input type="button" value="Kuva" id="kuva">
+
+  <section id="kast3">
+    <h2>Kasutusjuhend</h2>
+    <p>Vajuta nupule "Muuda värvi", et tekst esimeses kastis muutuks punaseks.</p>
+    <input type="button" value="Muuda värvi" id="varv">
+  </section>
+
   <section id="kast1">
     <h2>Tere tulemast!</h2>
     <p>See on veebirakenduste tunnis
@@ -48,8 +106,8 @@
     <h2>Päevapilt</h2>
     <div>Ise tehtud pilt
       <img src="inimene1.png" alt="see on inimene">
-
     </div>
+    <div id="vastus2" style="margin-top: 10px; font-weight: bold; color: #e67e22;"></div>
   </section>
 
 </main>
@@ -59,7 +117,6 @@
     Timuri leht
   </div>
 </footer>
-
 
 </body>
 </html>

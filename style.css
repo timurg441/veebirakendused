@@ -110,3 +110,7 @@ main{
     background-color: #f9f9f9;
 }
 
+#kast1, #kast2 {
+    position: relative;
+    left: 0;
+}
