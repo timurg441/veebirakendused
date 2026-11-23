@@ -82,8 +82,9 @@ nav ul li a{
     font-variant: small-caps;
 }
 
-nav ul li a:hover{ /*link fookuses - hiir on peal*/
-    background-color: orange;
+nav ul li a.hover{ /*hiir on peal (jQuery lisab klassi hover)*/
+    background-color: #099;
+    color: #fff;
 }
 
 nav{
@@ -113,4 +114,66 @@ main{
 #kast1, #kast2 {
     position: relative;
     left: 0;
+}
+
+/*****************JUHEND (jQuery)**************/
+section#juhend{
+    width: 420px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: floralwhite;
+    border: 3px solid lightblue;
+    border-radius: 12px;
+}
+
+section#juhend h2{
+    cursor: pointer;
+    text-align: center;
+    color: black;
+}
+
+section#kast3{
+    text-align: center;
+}
+
+
+/*****************MENÜÜ**************/
+nav ul li{
+    position: relative;
+}
+nav ul ul{
+    display: none;
+    position: absolute;
+    width: 200px;
+}
+nav ul ul li{
+    float: none;
+}
+nav ul ul a{
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    background-color: lightcoral;
+    color: white;
+    padding: 5px;
+    text-align: left;
+}
+nav ul li:hover > a{
+    background-color: orange;
+}
+nav ul ul a:hover{
+    background-color: orange;
+    font-weight: 700;
+}
+
+/***************** Vihje- ehk spikrimullide*****************/
+#vihje {
+    position: fixed;
+    z-index: 9999;
+    color: #fff;
+    font-size: 12px;
+    background-color: #000;
+    padding: 5px 15px;
+    border-radius: 4px;
+    display: none;
 }

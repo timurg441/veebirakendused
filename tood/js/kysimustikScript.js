@@ -12,12 +12,10 @@ function radioValik(){
     let spotify=document.getElementById("spotify");
     let raadio=document.getElementById("raadio");
     let vinyl=document.getElementById("vinüülplaat");
-    let pilt=document.getElementById("pilt");
 
     let valik="";
     if(spotify.checked){
         valik=spotify.value;
-        pilt.src="../images/smile.png";
     } else if(raadio.checked){
         valik=raadio.value;
     } else if(vinyl.checked){

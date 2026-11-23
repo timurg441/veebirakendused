@@ -1,7 +1,6 @@
-<!DOCTYPE html><!--deklaratsioon et kasutame html5-->
-<!--kommentaar-->
+<!DOCTYPE html>
 <html lang="et">
-<head> <!--tehniline info-->
+<head>
   <meta charset="UTF-8">
   <title>Timur veebirakenduste aluste tööd</title>
   <link rel="stylesheet" href="style.css">
@@ -11,112 +10,161 @@
           crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"
           integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI="
-          crossorigin="anonymous">
-  </script>
+          crossorigin="anonymous"></script>
+  <script src="tood/js/breadcrumb.js"></script>
 
   <script>
-    $(document).ready(function() {
-      $('#kuva').hide();
+    $(document).ready(function () {
 
-      $('#peida').click(function() {
+      $('#kuva').hide();
+      $('#peida').click(function () {
         $('#kast1, #kast2').hide(500);
         $(this).hide();
         $('#kuva').show();
       });
-
-      $('#kuva').click(function() {
+      $('#kuva').click(function () {
         $('#kast1, #kast2').show(500);
         $(this).hide();
         $('#peida').show();
       });
 
-      $('#varv').click(function() {
+      $('#varv').click(function () {
         $('#kast1').css('color', 'red');
       });
+
+      $('#vasakule').click(function () {
+        $('#kast1').animate({left: '-=80px'}, 500);
+      });
+      $('#paremale').click(function () {
+        $('#kast1').animate({left: '+=80px'}, 500);
+      });
+
+      $('#juhend h2').click(function () {
+        $('#juhendSisu').slideToggle(400);
+      });
+
+      $('#pildiNupp').click(function () {
+        $('#kast2 img').fadeToggle(600);
+      });
+
+
+      $('body').append('<div id="vihje"></div>');
+      $('.vihjemull').mouseover(function (e) {
+        var mull = $(this).attr('title');
+        $(this).attr('title', '');
+        $('#vihje').text(mull).fadeIn('500');
+        $('#vihje').fadeTo('10', 0.9);
+      }).mousemove(function (e) {
+        $('#vihje').css('top', e.clientY + 15);
+        $('#vihje').css('left', e.clientX + 15);
+      }).mouseout(function () {
+        $(this).attr('title', $('#vihje').text());
+        $('#vihje').hide();
+      });
+
     });
 
-    function start(){
+    function start() {
       $('#kast1').draggable();
       $('#kast2 img').attr('id', 'pilt').draggable();
-
       $('#kast1').bind("drag", xyKoordinat1);
       $('#pilt').bind("drag", xyKoordinat2);
     }
 
-    function xyKoordinat1(event, ui){
+    function xyKoordinat1(event, ui) {
       let koht = ui.offset;
       $('#vastus1').html('Kast 1 -> x: ' + koht.left + ' //// y: ' + koht.top);
     }
 
-    function xyKoordinat2(event, ui){
+    function xyKoordinat2(event, ui) {
       let koht = ui.offset;
       $('#vastus2').html('Pilt -> x: ' + koht.left + ' //// y: ' + koht.top);
     }
   </script>
 </head>
+
 <body onload="start()">
-<!--veebilehe sisu, mis kasutaja näeb-->
-<!--päis-->
 <header>
-  <h1>
-    Timur veebirakenduste aluste tööd
-  </h1>
+  <h1>Timur veebirakenduste aluste tööd</h1>
 </header>
-<!--navigeerimismenüü-->
+
 <nav>
   <ul>
     <li>
-      <a href="index.html">Kodu</a>
+      <a href="index.html" class="vihjemull" title="Avaleht - see on koduleht">Kodu</a>
     </li>
     <li>
-      <a href="tutvustus.html">Tutvustus</a>
+      <a href="tutvustus.html" class="vihjemull" title="Tutvustus - kes ma olen ja mida õpin">Tutvustus</a>
     </li>
     <li>
-      <a href="lingid.html">Kasulikud lingid</a>
+      <a href="lingid.html" class="vihjemull" title="Kasulikud lingid - õppematerjalid ja abilehed">Kasulikud lingid</a>
     </li>
     <li>
-      <a href="tood.html">Tehtud tööd</a>
+      <a href="tood.html" class="vihjemull" title="Tehtud tööd - valmis tööd, mida olen teinud">Tehtud tööd</a>
+      <ul>
+        <li><a href="tood/tabelid.html">Tabelid</a></li>
+        <li><a href="tood/maparea.html">Map area pilt </a></li>
+        <li><a href="tood/iseseisevtabel.html">Hindeline töö (tabeli loomine näidise järgi)</a></li>
+        <li><a href="tood/vormid/kysimustik.html">Tavaline küsimustik </a></li>
+        <li><a href="tood/vormid/Programmeerimise kusimustik/kusimustik.html">Programmeerimise küsimustik </a></li>
+        <li><a href="tood/vormid/Programmeerimise kusimustik/kalkulaatorid.html">Kalkulaatorid </a></li>
+        <li><a href="tood/joonis/canvasJoonistamine.html">Canvas joonistamine </a></li>
+        <li><a href="tood/jQuery/index.html">jQuery </a></li>
+      </ul>
     </li>
     <li>
-      <a href="meedia.html">Meedia</a>
+      <a href="meedia.html" class="vihjemull" title="Meedia - siit leiad pildid ja videod">Meedia</a>
     </li>
   </ul>
 </nav>
-<!--sisu-->
+
 <main>
-  <input type="button" value="Peida" id="peida">
-  <input type="button" value="Kuva" id="kuva">
+  <input type="button" value="Peida" id="peida" class="vihjemull" title="Peidab mõlemad kastid">
+  <input type="button" value="Kuva" id="kuva" class="vihjemull" title="Toob peidetud kastid uuesti nähtavale">
+
+  <section id="juhend">
+    <h2>jQuery kasutusjuhend</h2>
+    <div id="juhendSisu">
+      <p>Sellel lehel on mitu jQuery efektid. Proovi neid!</p>
+      <ul>
+        <li>Peida / Kuva nupp - peidab või näitab kaste</li>
+        <li>Muuda värvi - tekst esimeses kastis muutub punaseks</li>
+        <li><- / -> nupud - esimene kast liigub vasakule või paremale</li>
+        <li>Pilt sisse/välja - pilt hajub või ilmub</li>
+        <li>Lohista kasti või pilti hiirega - näed koordinaate</li>
+        <li>Kliki sellel pealkirjal - juhend peitub ja ilmub uuesti</li>
+      </ul>
+    </div>
+  </section>
 
   <section id="kast3">
-    <h2>Kasutusjuhend</h2>
-    <p>Vajuta nupule "Muuda värvi", et tekst esimeses kastis muutuks punaseks.</p>
-    <input type="button" value="Muuda värvi" id="varv">
+    <h2>Nupud</h2>
+    <input type="button" value="Muuda värvi" id="varv" class="vihjemull" title="Muudab esimese kasti teksti värvi punaseks">
+    <input type="button" value="<-" id="vasakule" class="vihjemull" title="Liigutab esimest kasti 80px vasakule">
+    <input type="button" value="->" id="paremale" class="vihjemull" title="Liigutab esimest kasti 80px paremale">
+    <input type="button" value="Pilt sisse/välja" id="pildiNupp" class="vihjemull" title="Pilt kaob ja ilmub vaheldumisi">
   </section>
 
   <section id="kast1">
     <h2>Tere tulemast!</h2>
-    <p>See on veebirakenduste tunnis
-      käsitsi kirjutatud leht!</p>
+    <p>See on veebirakenduste tunnis käsitsi kirjutatud leht!</p>
     <br>
     <br>
     <p>Palun kasuta navigeerimismenüü, et leida info!</p>
+    <div id="vastus1" style="margin-top: 10px; font-weight: bold; color: #2a9d8f;"></div>
   </section>
 
   <section id="kast2">
     <h2>Päevapilt</h2>
     <div>Ise tehtud pilt
-      <img src="inimene1.png" alt="see on inimene">
+      <img src="inimene1.png" alt="see on inimene" class="vihjemull" title="Lohista pilti hiirega ja näed koordinaate all">
     </div>
     <div id="vastus2" style="margin-top: 10px; font-weight: bold; color: #e67e22;"></div>
   </section>
-
 </main>
-<!--jalus-->
-<footer>
-  <div>
-    Timuri leht
-  </div>
-</footer>
 
+<footer>
+  <div>Timuri leht</div>
+</footer>
 </body>
 </html>
