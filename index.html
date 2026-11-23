@@ -5,8 +5,12 @@
   <title>Timur veebirakenduste aluste tööd</title>
   <link rel="stylesheet" href="style.css">
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"
+          integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI="
+          crossorigin="anonymous"></script>
   <script src="tood/js/breadcrumb.js"></script>
 
   <script>
@@ -42,6 +46,7 @@
       $('#pildiNupp').click(function () {
         $('#kast2 img').fadeToggle(600);
       });
+
 
       $('body').append('<div id="vihje"></div>');
       $('.vihjemull').mouseover(function (e) {
@@ -86,16 +91,16 @@
 <nav>
   <ul>
     <li>
-      <a href="index.html" class="vihjemull" title="Avaleht - see on koduleht">Kodu</a>
+      <a href="index.html" class="vihjemull" title="Avaleht – siit leiad jQuery harjutused ja nupud">Kodu</a>
     </li>
     <li>
-      <a href="tutvustus.html" class="vihjemull" title="Tutvustus - kes ma olen ja mida õpin">Tutvustus</a>
+      <a href="tutvustus.html" class="vihjemull" title="Tutvustus – kes ma olen ja mida õpin">Tutvustus</a>
     </li>
     <li>
-      <a href="lingid.html" class="vihjemull" title="Kasulikud lingid - õppematerjalid ja abilehed">Kasulikud lingid</a>
+      <a href="lingid.html" class="vihjemull" title="Kasulikud lingid – õppematerjalid ja abilehed">Kasulikud lingid</a>
     </li>
     <li>
-      <a href="tood.html" class="vihjemull" title="Tehtud tööd - valmis tööd, mida olen teinud">Tehtud tööd</a>
+      <a href="tood.html">Tehtud tööd</a>
       <ul>
         <li><a href="tood/tabelid.html">Tabelid</a></li>
         <li><a href="tood/maparea.html">Map area pilt </a></li>
@@ -108,13 +113,13 @@
       </ul>
     </li>
     <li>
-      <a href="meedia.html" class="vihjemull" title="Meedia - siit leiad pildid ja videod">Meedia</a>
+      <a href="meedia.html" class="vihjemull" title="Meedia – siit leiad pildid ja videod">Meedia</a>
     </li>
   </ul>
 </nav>
 
 <main>
-  <input type="button" value="Peida" id="peida" class="vihjemull" title="Peidab mõlemad kastid">
+  <input type="button" value="Peida" id="peida" class="vihjemull" title="Peidab mõlemad kastid (kast1 ja kast2) 500 ms jooksul">
   <input type="button" value="Kuva" id="kuva" class="vihjemull" title="Toob peidetud kastid uuesti nähtavale">
 
   <section id="juhend">
@@ -135,9 +140,9 @@
   <section id="kast3">
     <h2>Nupud</h2>
     <input type="button" value="Muuda värvi" id="varv" class="vihjemull" title="Muudab esimese kasti teksti värvi punaseks">
-    <input type="button" value="<-" id="vasakule" class="vihjemull" title="Liigutab esimest kasti 80px vasakule">
-    <input type="button" value="->" id="paremale" class="vihjemull" title="Liigutab esimest kasti 80px paremale">
-    <input type="button" value="Pilt sisse/välja" id="pildiNupp" class="vihjemull" title="Pilt kaob ja ilmub vaheldumisi">
+    <input type="button" value="<-" id="vasakule" class="vihjemull" title="Liigutab esimest kasti 80px vasakule (animate)">
+    <input type="button" value="->" id="paremale" class="vihjemull" title="Liigutab esimest kasti 80px paremale (animate)">
+    <input type="button" value="Pilt sisse/välja" id="pildiNupp" class="vihjemull" title="FadeToggle efekt – pilt kaob ja ilmub vaheldumisi">
   </section>
 
   <section id="kast1">
@@ -152,7 +157,7 @@
   <section id="kast2">
     <h2>Päevapilt</h2>
     <div>Ise tehtud pilt
-      <img src="inimene1.png" alt="see on inimene" class="vihjemull" title="Lohista pilti hiirega ja näed koordinaate all">
+      <img src="inimene1.png" alt="see on inimene" class="vihjemull" title="Päevapilt – lohista pilti hiirega ja näed koordinaate all">
     </div>
     <div id="vastus2" style="margin-top: 10px; font-weight: bold; color: #e67e22;"></div>
   </section>
